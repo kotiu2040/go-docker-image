@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-go-server
+spec:
+  selector:
+    matchLabels:
+      app: sample-go-server
+  template:
+    metadata:
+      labels:
+        app: sample-go-server
+    spec:
+      containers:
+      - name: sample-go-server
+        image: kotiuggam/sample-go-server
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 4000

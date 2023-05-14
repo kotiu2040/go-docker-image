@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-go-server
+spec:
+  selector:
+    app: sample-go-server
+  ports:
+    - name: http
+      port: 80
+      targetPort: 4000
+  type: LoadBalancer
